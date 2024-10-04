@@ -1,0 +1,27 @@
+{
+  "name": "create-web3-dapp",
+  "version": "0.0.1",
+  "description": "Web3 DApp template collection for Next.js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ce1ling/create-web3-dapp.git"
+  },
+  "keywords": [
+    "template",
+    "web3",
+    "dapp",
+    "next.js"
+  ],
+  "author": "Ce1ling",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ce1ling/create-web3-dapp/issues"
+  },
+  "homepage": "https://github.com/Ce1ling/create-web3-dapp#readme"
+}
