@@ -1,9 +1,11 @@
 import { fallback, http, unstable_connector } from 'wagmi'
-import { getDefaultConfig } from '@rainbow-me/rainbowkit'
+import { getDefaultConfig, getDefaultWallets } from '@rainbow-me/rainbowkit'
 import { injected } from 'wagmi/connectors'
 import { mainnet, sepolia } from 'wagmi/chains'
 
 import { dotenv } from '@/lib/env'
+
+const { wallets } = getDefaultWallets()
 
 const dev = {
   chians: [sepolia],
@@ -17,6 +19,7 @@ export const wagmiConfig = getDefaultConfig({
   appName: 'YOUR_WALLETCONNECT_APP_NAME',
   projectId: 'YOUR_WALLETCONNECT_PROJECT_ID',
   ssr: true,
+  wallets,
   chains: [mainnet, ...(dotenv.isDev ? dev.chians : [])],
   transports: {
     [mainnet.id]: fallback([http(), unstable_connector(injected)]),

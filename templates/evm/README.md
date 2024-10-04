@@ -6,12 +6,28 @@
 pnpm add wagmi@2.x viem@2.x @rainbow-me/rainbowkit@2.x
 ```
 
-2. Copy the `components/app.tsx` content to your App Router's `app/layout.tsx` or Pages Router's `_app.tsx`.
-3. Copy the `components/providers/app.tsx` to instead your `components/providers/providers.tsx`.
-4. Copy the `config/wagmi.ts` file to your `config/` folder.
-5. Copy the `constants/contract.ts` file to your `constants` folder.
-6. Copy the `contract/` folder to your project.
-7. Copy the `hooks/` folder to your `hooks/` folder and rename to `contract/`(your hooks folder may look like this: `hooks/contract/`).
+2. Copy `import '@rainbow-me/rainbowkit/styles.css'` to your app component.
+3. Copy `config/wagmi.ts` to your `config/`.
+4. Copy `components/evm.tsx` to your `components/providers/` and update your `AppProviders`:
+
+```tsx
+import { EvmProvider } from '@/components/providers/evm'
+
+export const AppProviders = ({ children }: PropsWithChildren) => {
+  return (
+    <I18nextProvider i18n={i18nConfig}>
+      <QueryClientProvider client={queryClient}>
+        {/* Must be within QueryClientProvider */}
+        <EvmProvider>{children}</EvmProvider>
+      </QueryClientProvider>
+    </I18nextProvider>
+  )
+}
+```
+
+5. Copy `constants/contract.ts` to your `constants/`.
+6. Copy `contract/` folder to your project.
+7. Copy `hooks/` folder to your `hooks/` folder and rename to `contract/`(your hooks folder may look like this: `hooks/contract/`).
 
 Finally, you can verify if the initialization was successful by this case:
 
