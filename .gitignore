@@ -39,6 +39,5 @@ next-env.d.ts
 .vscode
 
 # lock files
-/templates/**/package-lock.json
-/templates/**/pnpm-lock.yaml
-/templates/**/yarn.lock
+/templates/**/*lock*
+/examples/**/*lock*
