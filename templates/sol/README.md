@@ -6,9 +6,26 @@
 pnpm add @solana/spl-token@0.4.x @solana/wallet-adapter-base@0.9.x @solana/wallet-adapter-react@0.15.x @solana/wallet-adapter-wallets@0.19.x @coral-xyz/anchor@0.29.0 bs58 nanoid
 ```
 
-2. Copy the `config/sol.ts` file to your `config/` folder.
-3. Copy the `hooks/` folder to your `hooks/` folder and rename to `sol/`(your hooks folder may look like this: `hooks/sol/`).
-4. Copy the `utils/sol.ts` to your `utils/` folder.
+2. Copy `components/sol.tsx` to your `components/providers/` and update your `AppProviders.tsx`.
+
+```tsx
+import { SolProvider } from '@/components/providers/sol'
+
+export const AppProviders = ({ children }: PropsWithChildren) => {
+  return (
+    <I18nextProvider i18n={i18nConfig}>
+      <QueryClientProvider client={queryClient}>
+        {/* Must be within QueryClientProvider */}
+        <SolProvider>{children}</SolProvider>
+      </QueryClientProvider>
+    </I18nextProvider>
+  )
+}
+```
+
+3. Copy `config/sol.ts` file to your `config/` folder.
+4. Copy `hooks/` folder to your `hooks/` folder and rename to `sol/`(your hooks folder may look like this: `hooks/sol/`).
+5. Copy `utils/sol.ts` to your `utils/` folder.
 
 Finally, you can verify if the initialization was successful by this case:
 
