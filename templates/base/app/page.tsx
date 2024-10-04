@@ -5,6 +5,8 @@ import { EyeOpenIcon, EyeClosedIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 import { H1 } from '@/components/ui/typography/h1'
 import { H2 } from '@/components/ui/typography/h2'
@@ -43,9 +45,20 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 
+const schema = z.object({
+  username: z.string().min(1, 'Username is required'),
+  password: z.string().min(1, 'Password is required'),
+})
+
 export default function HomePage() {
   const [type, setType] = useState<'password' | 'text'>('password')
-  const form = useForm()
+  const form = useForm({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      username: 'L1en',
+      password: '123456',
+    },
+  })
 
   const onSubmit = (values: any) => {
     console.log('submit', values)
