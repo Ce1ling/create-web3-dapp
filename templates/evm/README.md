@@ -1,4 +1,6 @@
-## EVM template guide
+This contains all content related to SOL.
+
+## Getting Started
 
 1. Install the dependencies:
 
@@ -26,8 +28,8 @@ export const AppProviders = ({ children }: PropsWithChildren) => {
 ```
 
 5. Copy `constants/contract.ts` to your `constants/`.
-6. Copy `contract/` folder to your project.
-7. Copy `hooks/` folder to your `hooks/` folder and rename to `contract/`(your hooks folder may look like this: `hooks/contract/`).
+6. Copy `contract/` to your project.
+7. Copy `hooks/` to your `hooks/` and rename to `contract/`(your hooks folder may like this: `hooks/contract/`).
 
 Finally, you can verify if the initialization was successful by this case:
 

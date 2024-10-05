@@ -1,4 +1,6 @@
-## SOL template guide
+This contains all content related to SOL.
+
+## Getting Started
 
 1. Install the dependencies:
 
@@ -23,9 +25,9 @@ export const AppProviders = ({ children }: PropsWithChildren) => {
 }
 ```
 
-3. Copy `config/sol.ts` file to your `config/` folder.
-4. Copy `hooks/` folder to your `hooks/` folder and rename to `sol/`(your hooks folder may look like this: `hooks/sol/`).
-5. Copy `utils/sol.ts` to your `utils/` folder.
+3. Copy `config/sol.ts` to your `config/` .
+4. Copy `hooks/` to your `hooks/` and rename to `sol/`(your hooks folder may look like this: `hooks/sol/`).
+5. Copy `utils/sol.ts` to your `utils/`.
 
 Finally, you can verify if the initialization was successful by this case:
 
