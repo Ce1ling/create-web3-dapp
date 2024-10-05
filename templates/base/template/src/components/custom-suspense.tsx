@@ -8,7 +8,7 @@ import {
 } from 'react'
 
 interface Props extends ComponentProps<'div'> {
-  isPending?: boolean
+  isPending: boolean
   fallback: ReactNode
   nullback?: ReactNode
   container?: keyof ReactDOM | 'fragment'
