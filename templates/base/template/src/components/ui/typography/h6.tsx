@@ -4,14 +4,14 @@ import { type ComponentProps } from 'react'
 
 import { cn } from '@/lib/utils'
 
-export const H1 = ({ className, ...props }: ComponentProps<'h1'>) => {
+export const H5 = ({ className, ...props }: ComponentProps<'h5'>) => {
   return (
-    <h1
+    <h5
       className={cn(
-        'scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl',
+        'scroll-m-20 text-base font-semibold tracking-tight',
         className
       )}
       {...props}
-    ></h1>
+    ></h5>
   )
 }
