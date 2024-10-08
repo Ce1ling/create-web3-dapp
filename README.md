@@ -1,1 +1,1 @@
-Web3 DApp template collection for Next.js.
+Web3 DApp template collection for Next.js

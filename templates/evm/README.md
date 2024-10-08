@@ -1,4 +1,4 @@
-This contains all content related to SOL.
+This contains all content related to EVM.
 
 ## Getting Started
 
@@ -19,7 +19,7 @@ export const AppProviders = ({ children }: PropsWithChildren) => {
   return (
     <I18nextProvider i18n={i18nConfig}>
       <QueryClientProvider client={queryClient}>
-        {/* Must be within QueryClientProvider */}
+        {/* Must be within `QueryClientProvider` */}
         <EvmProvider>{children}</EvmProvider>
       </QueryClientProvider>
     </I18nextProvider>

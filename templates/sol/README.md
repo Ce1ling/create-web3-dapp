@@ -17,7 +17,7 @@ export const AppProviders = ({ children }: PropsWithChildren) => {
   return (
     <I18nextProvider i18n={i18nConfig}>
       <QueryClientProvider client={queryClient}>
-        {/* Must be within QueryClientProvider */}
+        {/* Must be within `QueryClientProvider` */}
         <SolProvider>{children}</SolProvider>
       </QueryClientProvider>
     </I18nextProvider>
