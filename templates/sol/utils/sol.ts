@@ -16,7 +16,7 @@ import {
 import { nanoid } from 'nanoid'
 
 import { solExplorerLinks } from '@/config/sol'
-import { qs } from '@/lib/create-fetch/qs'
+import { qs } from '@/lib/qs'
 
 export const formatSol = (amount: number | string) => {
   return BigNumber(amount).div(web3.LAMPORTS_PER_SOL).toFixed()

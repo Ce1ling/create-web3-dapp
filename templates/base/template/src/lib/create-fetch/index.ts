@@ -1,4 +1,4 @@
-import { qs } from './qs'
+import { qs } from '@/lib/qs'
 import {
   type FetchMethods,
   type QueryOptions,
