@@ -17,8 +17,8 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { cn } from '@/lib/utils'
-import { Skeleton } from './ui/skeleton'
-import { linkVariant } from '@/styles/variants/link'
+import { Skeleton } from '@/components/ui/skeleton'
+import { linkVariant } from '@/components/link'
 
 interface Props<T extends RowData> extends ComponentProps<typeof Table> {
   table: ITable<T>
@@ -127,7 +127,8 @@ export const DataTable = <T extends RowData>({
             >
               <TableCell
                 colSpan={ths.length}
-                className={linkVariant(
+                className={cn(
+                  linkVariant(),
                   'font-normal',
                   disabled && 'text-zinc-500'
                 )}
