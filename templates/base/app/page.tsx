@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { EyeOpenIcon, EyeClosedIcon } from '@radix-ui/react-icons'
-import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
@@ -13,7 +12,7 @@ import { H2 } from '@/components/ui/typography/h2'
 import { H3 } from '@/components/ui/typography/h3'
 import { H4 } from '@/components/ui/typography/h4'
 import { P } from '@/components/ui/typography/p'
-import { linkVariant } from '@/styles/variants/link'
+import { Link } from '@/components/link'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -158,11 +157,7 @@ export default function HomePage() {
           />
           <Button className="mt-2">Login</Button>
           <p className="text-sm text-zinc-500 mt-2">
-            No account?{' '}
-            <Link href="#" className={linkVariant()}>
-              Register for now
-            </Link>
-            .
+            No account? <Link href="#">Register for now</Link>.
           </p>
         </form>
       </Form>
