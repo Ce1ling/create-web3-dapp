@@ -9,7 +9,7 @@ import dayjsEn from 'dayjs/locale/en'
 
 import '@/styles/globals.css'
 import { Toaster } from '@/components/ui/sonner'
-import { AppProviders } from '@/components/providers/app'
+import { Providers } from '@/components/providers'
 
 dayjs.extend(utc)
 dayjs.extend(timezone)
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth dark">
       <body>
-        <AppProviders>{children}</AppProviders>
+        <Providers>{children}</Providers>
         <Toaster />
       </body>
     </html>
