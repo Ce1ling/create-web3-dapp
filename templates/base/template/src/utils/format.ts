@@ -1,5 +1,7 @@
 import { BigNumber } from 'bignumber.js'
 
+import { getSub } from '@/lib/utils'
+
 export const formatAddress = (
   addr: string,
   { prefixLen = 4, suffixLen = 4, separator = '...' } = {}
@@ -33,7 +35,7 @@ export const formatCoundown = (
 
 export const formatDecimals = (
   value?: number | string | BigNumber,
-  { fixed = 2, round = false } = {}
+  { fixed = 2, round = false, sub = false } = {}
 ) => {
   if (!value) return '0'
 
@@ -51,7 +53,9 @@ export const formatDecimals = (
     const zeroLen = decimalPart.match(/^0*/)?.[0].length ?? 0
     const lastNumbers = decimalPart.replace(/^0+/, '')
     const slicedLastNum = lastNumbers.slice(0, fixed)
-    const result = `0.0{${zeroLen}}${slicedLastNum}`
+    const result = sub
+      ? `0.0${getSub(zeroLen)}${slicedLastNum}`
+      : `0.0{${zeroLen}}${slicedLastNum}`
 
     if (zeroLen < 2) return value.toFixed(fixed, roundMode)
     if (zeroLen === 2) return value.toFixed(fixed + 1, roundMode)
