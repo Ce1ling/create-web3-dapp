@@ -41,3 +41,7 @@ export const getSub = (n: number) => {
 
   return result
 }
+
+export const assert = (condition: boolean, message: string) => {
+  if (!condition) throw new Error(message || 'Assert failed')
+}
