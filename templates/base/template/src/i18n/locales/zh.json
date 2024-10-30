@@ -1,5 +1,9 @@
 {
   "no-data": "暂无数据",
   "view-more": "查看更多",
-  "no-wallet": "未安装相关钱包"
+  "no-wallet": "未安装相关钱包",
+  "copy": {
+    "success": "复制成功！",
+    "failed": "复制失败, 请稍后重试"
+  }
 }

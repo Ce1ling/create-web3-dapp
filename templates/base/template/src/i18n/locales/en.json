@@ -1,5 +1,9 @@
 {
   "no-data": "No data",
   "view-more": "View more",
-  "no-wallet": "No wallet installed"
+  "no-wallet": "No wallet installed",
+  "copy": {
+    "success": "Copy successful!",
+    "failed": "Copy failed, please try again later"
+  }
 }
