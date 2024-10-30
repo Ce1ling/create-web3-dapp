@@ -15,11 +15,10 @@ export const SolProvider = ({ children }: PropsWithChildren) => {
     ? WalletAdapterNetwork.Devnet
     : WalletAdapterNetwork.Mainnet
   const endpoint = useMemo(() => web3.clusterApiUrl(network), [network])
-  const wallets = useMemo(() => [], [network])
 
   return (
     <ConnectionProvider endpoint={endpoint}>
-      <WalletProvider wallets={wallets} autoConnect>
+      <WalletProvider wallets={[]} autoConnect>
         {children}
       </WalletProvider>
     </ConnectionProvider>
