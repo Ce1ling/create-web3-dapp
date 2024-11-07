@@ -39,5 +39,5 @@ next-env.d.ts
 .vscode
 
 # lock files
-/templates/**/*lock*
-/examples/**/*lock*
+/templates/**/pnpm-lock.yaml*
+/examples/**/pnpm-lock.yaml
